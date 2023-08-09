@@ -1,17 +1,55 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+class Message extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello pd!</h1>
+      </div>
+    )
+  }
+}
+
+// var style = {
+//   backgroundColor: 'pink',
+//   color: 'grey',
+//   fontSize: 20,
+//   margin: '20px',
+//   paddingLeft: '50px',
+//   paddingTop: '50px',
+//   paddingBottom: '50px'
+// }
+
+// const title = React.createElement(
+//   'ul',
+//   { id: 'title', className: 'header', style: style },
+//   "Hello pd",
+//   React.createElement(
+//     'li',
+//     {},
+//     "one"
+//   ),
+//   React.createElement(
+//     'li',
+//     {},
+//     "one"
+//   )
+// )
+
+ReactDOM.render(
+  // <div style={style}>
+  //   <h1 id='heading-id'>Hello pd</h1>
+  //   <ul>
+  //     <li>one</li>
+  //     <li>two</li>
+  //     <li>three</li>
+  //   </ul>
+  // </div>,
+
+  // title,
+
+  <Message />,
+  document.getElementById('root')
+)
