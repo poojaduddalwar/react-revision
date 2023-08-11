@@ -1,55 +1,37 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+
+let skiData = {
+  total: 50,
+  powder: 20,
+  backCountry: 20,
+  goal: 100
+}
+class SkiDaysCounter extends Component {
 
 
-class Message extends React.Component {
+  getPersent = decimal => {
+    return decimal * 100 + '%'
+  }
+  calGoal = (total, goal) => {
+    return this.getPersent(total / goal)
+  }
   render() {
+    const { total, powder, backCountry, goal } = this.props
     return (
-      <div>
-        <h1>Hello pd!</h1>
-      </div>
+      <section>
+        <div>Total : {total}</div>
+        <div>Powder : {powder}</div>
+        <div>Back Country : {backCountry}</div>
+        <div>Goal Progress: {this.calGoal(total, goal)}</div>
+      </section>
     )
   }
 }
 
-// var style = {
-//   backgroundColor: 'pink',
-//   color: 'grey',
-//   fontSize: 20,
-//   margin: '20px',
-//   paddingLeft: '50px',
-//   paddingTop: '50px',
-//   paddingBottom: '50px'
-// }
 
-// const title = React.createElement(
-//   'ul',
-//   { id: 'title', className: 'header', style: style },
-//   "Hello pd",
-//   React.createElement(
-//     'li',
-//     {},
-//     "one"
-//   ),
-//   React.createElement(
-//     'li',
-//     {},
-//     "one"
-//   )
-// )
+render(
+  <SkiDaysCounter total={skiData.total} powder={skiData.powder} backCountry={skiData.backCountry} goal={skiData.goal} />,
 
-ReactDOM.render(
-  // <div style={style}>
-  //   <h1 id='heading-id'>Hello pd</h1>
-  //   <ul>
-  //     <li>one</li>
-  //     <li>two</li>
-  //     <li>three</li>
-  //   </ul>
-  // </div>,
-
-  // title,
-
-  <Message />,
   document.getElementById('root')
 )
