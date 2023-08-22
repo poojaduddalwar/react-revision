@@ -1,34 +1,28 @@
 import React from 'react'
 import { render } from 'react-dom'
 
-let skiData = {
-  total: 50,
-  powder: 20,
-  backCountry: 20,
-  goal: 100
-}
-
-const getPersent = decimal => {
-  return decimal * 100 + '%'
-}
-const calGoal = (total, goal) => {
-  return getPersent(total / goal)
-}
-
-const SkiDaysCounter = ({ total, powder, backCountry, goal }) => {
+const Book = ({ title, author, pages }) => {
 
   return (
     <section>
-      <div>Total : {total}</div>
-      <div>Powder : {powder}</div>
-      <div>Back Country : {backCountry}</div>
-      <div>Goal Progress: {calGoal(total, goal)}</div>
+      <h2>{title}</h2>
+      <p>by : {author}</p>
+      <p>Pages : {pages} pages</p>
     </section>
   )
 }
 
+const Library = () => {
+
+  return (
+    <div>
+      <Book title="the sun Also rises" author="Ernest Hemingway" pages={260} />
+    </div>
+  )
+}
+
 render(
-  <SkiDaysCounter total={skiData.total} powder={skiData.powder} backCountry={skiData.backCountry} goal={skiData.goal} />,
+  <Library />,
 
   document.getElementById('root')
 )
